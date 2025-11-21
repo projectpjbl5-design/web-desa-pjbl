@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow-y: scroll;
+    }
+
+    nav {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #27ae5f6d;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav b {
+        font-size: 15px;
+        color: #27AE60;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav ul li {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav ul li svg {
+        position: relative;
+        top: -2px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #27AE60;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    nav ul li:hover {
+        transform: translatey(-10px);
+        transition: ease-in-out 0.3s;
+        opacity: 50%;
+    }
+
+    .title {
+        display: flex;
+        font-size: 15px;
+        font-weight: 800;
+        margin-top: 60px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: underline;
+        color: #27AE60;
+        position: relative;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .box-berita {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0 50px;
+        margin-bottom: 50px;
+    }
+
+    .berita-card {
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        background-color: white;
+    }
+    
+     [data-aos] {
+           transition: transform 0.4s ease-out, opacity 0.4s ease-out !important;
+        }
+
+
+    .berita-card:hover {
+        transform: translatey(-10px) !important;
+        scale: 1.02;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-content p {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    .card-content p::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card-content h4 {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    .card-content h4:-webkit-scrollbar {
+        display: none;
+    }
+
+    .berita-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .berita-card h4 {
+        font-size: 16px;
+        margin: 10px 0;
+        color: #27AE60;
+    }
+
+    .read-btn {
+        background-color: #27AE60;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+    .read-btn:hover {
+        background-color: #186c3b;
+        transition: 0.3s ease-in-out;
+    }
+</style>
+
+<body>
+    <nav>
+        <b>NGURENREJO</b>
+        <ul>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z" />
+                </svg>
+                <a href="home.html">HOME</a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm80-160h480v-80H240v80Zm0-160h160v-240H240v240Zm240 0h240v-80H480v80Zm0-160h240v-80H480v80Z" />
+                </svg>
+                <a href="news.html">NEWS</a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM380-420q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41Zm280 40q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29ZM480-160q85 0 155-40t113-106q-21-6-43-10t-45-4q-53 0-128 31T412-167q17 4 34 5.5t34 1.5Zm-127-26q35-72 79.5-107t67.5-47q-29-9-58.5-14.5T380-360q-45 0-89 11t-85 31q26 43 63.5 77.5T353-186Z" />
+                </svg>
+                <a href="profile.html">PROFILE</a>
+            </li>
+            <li id="navmaps">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M480-80q-106 0-173-33.5T240-200q0-24 14.5-44.5T295-280l63 59q-9 4-19.5 9T322-200q13 16 60 28t98 12q51 0 98.5-12t60.5-28q-7-8-18-13t-21-9l62-60q28 16 43 36.5t15 45.5q0 53-67 86.5T480-80Zm0-120Q339-304 269.5-402T200-594q0-71 25.5-124.5T291-808q40-36 90-54t99-18q49 0 99 18t90 54q40 36 65.5 89.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520Z" />
+                </svg>
+                <a href="home.html">ALAMAT</a>
+            </li>
+        </ul>
+    </nav>
+    <h3 class="title">BERITA DESA NGURENREJO</h3>
+    <div class="box-berita">
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="0">
+            <img src="foto/IMG-20251113-WA0023 (1).jpg" alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>Jelang Musim Tanam, Warga Ngurenrejo Pati Gelar Napak Tilas Kenduruan</h4>
+                <p>Menjelang musim tanam, warga Desa Ngurenrejo, Kecamatan Wedarijaksa, Kabupaten Pati, menggelar
+                    tradisi tahunan Napak Tilas Kenduruan, Kamis (13/11/2025). Tradisi ini menjadi bentuk penghormatan
+                    kepada leluhur sekaligus permohonan berkah agar pertanian warga berjalan lancar.
+
+                    Sekretaris Desa Ngurenrejo, Sutrisno, menjelaskan bahwa Napak Tilas Kenduruan merupakan warisan
+                    turun-temurun dari Ki Ageng Singopadu, pendiri Desa Ngurenrejo....</p>
+                <a href="page-news1.html">
+                    <button class="read-btn">Read More</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="foto/KIM04.jpg" alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>Khurmat Ki Ageng Singo Padu, Desa Ngurenrejo dan Ngurensiti Gelar Kirab Budaya</h4>
+                <p>Untuk memperingati Tahun Baru Islam I Muharrom 1445 H dan Khurmat Ki Ageng Singo Padu, Pemerintah
+                    Desa Ngurenrejo dan Ngurensiti Kecamatan Wedarijaksa Kabupaten Pati , mengadakan kirab budaya, pada
+                    Minggu siang (30/7).
+
+                    Ratusan warga desa Ngurensiti dan Ngurenrejo dengan mengenakan pakaian adat Jawa, begitu antusias
+                    menggelar pementasan kirab budaya dan berbagai kegiatan sosial yang rutin digelar setiap
+                    tahunya.....</p>
+                <a href="page-news2.html">
+                    <button class="read-btn">Read More</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="foto/image_editor_output_image1145148407-1653723526717-e1653788946902-800x480.jpg"
+                alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>Kades Nguren Rejo Bersama Koramil 07 Wedarijaksa Pati Gerak cepat Benahi lingkungan kantor Desa</h4>
+                <p>Kasnawi gimbo kades Nguren rejo lakukan pembenahan lingkungan kantor Desa, baik Polindes, Talut
+                    sungai, dilakukan dengan anggaran Dana talangan tabungan sendiri hingga ratusan juta. Dimana Desa
+                    ngurenrejo ditunjuk Koramil 07 wedarijaksa kampung Pancasila, dinilai daerah strategis melalui
+                    tahapan Interprestasi maupun Internalisasi ungkap Kapten Ian Danramil 07. Sabtu, (28/5/22)....</p>
+                <a href="page-news3.html">
+                    <button class="read-btn">Read More</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="foto/IMG_20241027_102616.jpg" alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>Pria Penyulam Tebu di Pati Ditemukan Meninggal di Kali Gung Wedi Kecamatan Wedarijaksa</h4>
+                <p>Seorang pria ditemukan meninggal dunia di Kali Gung Wedi yang berlokasi di Desa Ngurenrejo, Kecamatan
+                    Wedarijaksa, Kabupaten Pati. Penemuan ini dilaporkan pada hari Minggu, (27/10/2024), pukul 05.00
+                    WIB, dan dikonfirmasi oleh Kapolsek Wedarijaksa, AKP Suntoro, melalui pesan WhatsApp. “Benar telah
+                    ditemukan seorang pria meninggal di Kali Gung Wedi turut Desa Ngurenrejo Rt. 05 Rw. 01, Kecamatan
+                    Wedarijaksa, Kabupaten Pati....</p>
+                <a href="page-news4.html"> <button class="read-btn">Read More</button></a>
+            </div>
+        </div>
+
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="foto/RRI-Ft-Rusak-Rumah.jpeg" alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>Ngamuk Karena Cemburu, Seorang Pria Rusak Rumah Mantan Istri</h4>
+                <p>Gara-gara cemburu dengan SK (40 tahun) mantan istrinya, seorang pria berinisial MS (43 tahun) merusak
+                    rumah dan barang, serta tindakan tidak menyenangkan. Karena ulahnya itu, SK warga Desa Ngurenrejo
+                    Kecamatan Wedarijaksa melapokan MS warga Desa Langgenharjo Kecamatan Juwana ke polisi.
+                    Kapolresta Pati Kombes Pol Andhika Bayu Adhittama melalui Kapolsek Wedarijaksa Iptu Suntoro
+                    membenarkan, adanya laporan tersebut. Perusakan tersebut, terjadi pada Minggu tengah malam
+                    (4/12/2022).....</p>
+                <a href="page-news5.html"> <button class="read-btn">Read More</button></a>
+            </div>
+        </div>
+
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="500">
+            <img src="foto/IMG-20220826-WA0057.jpg" alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>Polsek Wedarijaksa Berhasil Menangkap Diduga Pelaku Perjudian Di Desa Ngurenrejo Pati</h4>
+                <p> Tak ada rasa jera para pelaku perjudian baik angka maupun nomor togel hongkong, justru kini semakin
+                    meraja rela sehingga membuat geram dan resah warga sekitar.
+                    Salah satu warga yang sudah sangat geram akan hal itu langsung melaporkan tindakan hukum dan
+                    kriminal ke unit Reskrim Polsek Wedarijaksaada hari Kamis ( 25/08/22)
+                    Saat itu juga anggota Polsek Wedarijaksa langsung melakukan patroli dan menuju TKP yaitu di rumah
+                    Sdr Godek Desa Ngurenrejo dan mendapati ada seseorang yang sedang menjadi bandar togel
+                    .....</p>
+                <a href="page-news6.html"> <button class="read-btn">Read More</button></a>
+            </div>
+        </div>
+
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="600">
+            <img src="foto/bawang-merah-3.jpg" alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>Bawang Merah, Penopang Perekonomian Masyarakat Ngurenrejo</h4>
+                <p>Siang itu, Senin (9/12/2024) para lansia wanita duduk berkumpul di sebuah gudang bawang merah milik
+                    Kasnawi (49) di Desa Ngurenrejo, Wedarijaksa, Pati, Jawa Tengah.
+                    Kasnawi adala  Kepala Desa, pelaku usaha, sekaligus ketua Asosiasi Bawang Merah Indonesia DPD
+                    Kabupaten Pati.
+                    Di gudang ini, hampir setiap hari menampung ratusan tenaga kerja yang berasal dari Desa Ngurenrejo
+                    dan sekitarnya
+                    Pekerja laki-laki bertugas sebagai pemanen, penjemur, dan tukang panggul.
+                    .....</p>
+                <a href="page-news7.html"> <button class="read-btn">Read More</button></a>
+            </div>
+        </div>
+
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="700">
+            <img src="foto/1694234872389-R.jpeg" alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>​Petani Bawang Merah Merugi, Tanamannya Terserang Hama</h4>
+                <p>Gegara tanaman terserang hama, petani bawang merah di Desa Ngurenrejo, Kecamatan Wedarijaksa, kini
+                    merugi. Mereka terpaksa menjual tanaman budidaya itu dengan harga yang jauh lebih murah.
+
+                    Petani Karyanto mengaku, akibat terserang hama, terpaksa menjual hasil panen tanaman palawijanya itu
+                    dengan harga Rp 12 ribu/ kg. Dia terpaksa menjual dengan harga yang lebih rumah dari biasanya, untuk
+                    menghindari kerugian yang lebih besar. ....</p>
+                <a href="page-news8.html"> <button class="read-btn">Read More</button></a>
+            </div>
+        </div>
+
+        <div class="berita-card" data-aos="fade-up" data-aos-delay="800">
+            <img src="foto/FB_IMG_1536540512480.jpg" alt="Pertanian Bawang Merah">
+            <div class="card-content">
+                <h4>KI AGENG SINGOPADU DESA NGURENREJO & DESA NGURENSITI</h4>
+                <p>Diantara Mitos dan Sejarah Singo Padu (Mangunkusumo), Penggede Nguren
+                    Menurut cerita yang berkembang dimasyarakat Singapadu atau Mangunkusuma termasuk keluarga kerajaan
+                    dari Ngayodya yang menjadi seorang patih yang merangkap menjadi jaksa. Dia memiliki istri bernama
+                    Supiah dari Nguren dan memiliki anak bernama Den Amat atau Surya Kusuma. Dia menjadi patih di Pati
+                    saat Adipati Mangun Oneng. Saat itu sedang terjadi peperangan antara Pati dan Banten....</p>
+                <a href="page-news9.html"> <button class="read-btn">Read More</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+          AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: false
+        });
+    </script>
+</body>
+
+</html>

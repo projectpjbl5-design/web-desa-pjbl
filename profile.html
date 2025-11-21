@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    nav {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #27ae5f6d;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav b {
+        font-size: 15px;
+        color: #27AE60;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav ul li {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav ul li svg {
+        position: relative;
+        top: -2px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #27AE60;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    nav ul li:hover {
+        transform: translatey(-10px);
+        transition: ease-in-out 0.3s;
+        opacity: 50%;
+    }
+
+    .title {
+        display: flex;
+        font-size: 15px;
+        font-weight: 800;
+        margin-top: 60px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: underline;
+        color: #27AE60;
+        position: relative;
+        right: 0px;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .title-2 {
+        display: flex;
+        font-size: 15px;
+        font-weight: 800;
+        margin-top: 5%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: underline;
+        color: #27AE60;
+        position: relative;
+        right: 0px;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+
+    .title-history h3 {
+        margin: 0;
+        line-height: 1.1;
+        text-align: left;
+    }
+
+    .title-history {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 2px;
+    }
+
+    .history {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        margin-top: 6%;
+        margin-bottom: 6%;
+    }
+
+    .contain-history {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .text-history p {
+        text-align: justify;
+        font-size: medium;
+        line-height: 1.5;
+        width: 450px;
+        height: 260px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    p:-webkit-scrollbar {
+        display: none;
+    }
+
+    .more {
+        border-radius: 5px;
+        background-color: #27AE60;
+        padding: 10px 20px;
+        color: white;
+        border: #27AE60;
+        font-weight: bold;
+        margin-top: 1%;
+        justify-content: left;
+
+    }
+
+    .more:hover {
+        background-color: #16703c;
+        transition: ease-in-out 0.3s;
+    }
+
+
+    .history img {
+        border-radius: 100%;
+        box-shadow: #27AE60 0px 0px 6px 0px;
+        object-fit: cover;
+        width: 350px;
+        height: 350px;
+        border: #27AE60 5px solid;
+    }
+
+    .struktur-pemerintahan {
+        font-size: 15px;
+        width: 100%;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        margin-top: 10%;
+        margin-bottom: 12%;
+    }
+
+    .row {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .row.center {
+        justify-content: center;
+    }
+
+    .child-str {
+        background-color: #27AE60;
+        padding: 15px 25px;
+        width: 200px;
+        font-size: 12.5px;
+        color: white;
+        border-radius: 32px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .child-str p {
+        margin: 0;
+    }
+
+    .title-str {
+        border-left: 5px solid #27AE60;
+        padding-left: 10px;
+        font-weight: bold;
+        margin-left: 15%;
+        margin-bottom: 5%;
+        color: #27AE60;
+    }
+
+    .parent-vimi {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 50px;
+        border: none;
+        border-radius: 20px;
+        margin: 0px 190px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 20px 50px;
+        border: 2px solid #27AE60;
+        line-height: 1.2;
+
+    }
+
+    .title-str-vm {
+        border-left: 5px solid #27ae60;
+        padding-left: 10px;
+        font-weight: bold;
+        color: #27AE60;
+    }
+</style>
+
+<body>
+    <nav>
+        <b>NGURENREJO</b>
+        <ul>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z" />
+                </svg>
+                <a href="home.html">HOME</a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm80-160h480v-80H240v80Zm0-160h160v-240H240v240Zm240 0h240v-80H480v80Zm0-160h240v-80H480v80Z" />
+                </svg>
+                <a href="news.html">NEWS</a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM380-420q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41Zm280 40q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29ZM480-160q85 0 155-40t113-106q-21-6-43-10t-45-4q-53 0-128 31T412-167q17 4 34 5.5t34 1.5Zm-127-26q35-72 79.5-107t67.5-47q-29-9-58.5-14.5T380-360q-45 0-89 11t-85 31q26 43 63.5 77.5T353-186Z" />
+                </svg>
+                <a href="profile.html">PROFILE</a>
+            </li>
+            <li id="navmaps">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M480-80q-106 0-173-33.5T240-200q0-24 14.5-44.5T295-280l63 59q-9 4-19.5 9T322-200q13 16 60 28t98 12q51 0 98.5-12t60.5-28q-7-8-18-13t-21-9l62-60q28 16 43 36.5t15 45.5q0 53-67 86.5T480-80Zm0-120Q339-304 269.5-402T200-594q0-71 25.5-124.5T291-808q40-36 90-54t99-18q49 0 99 18t90 54q40 36 65.5 89.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520Z" />
+                </svg>
+                <a href="home.html">ALAMAT</a>
+            </li>
+        </ul>
+    </nav>
+    <h3 class="title" data-aos="fade-up">SEJARAH DESA NGURENREJO</h3>
+
+    <div class="history">
+        <div class="contain-history" data-aos="fade-right">
+            <div class="title-history">
+                <h3>SEJARAH</h3>
+                <h3 style="color: #27AE60;">BERDIRINYA DESA NGURENREJO</h3>
+            </div>
+            <div class="text-history">
+                <p>
+                    Diantara Mitos dan Sejarah Singo Padu (Mangunkusumo), Penggede Nguren
+                    Menurut cerita yang berkembang dimasyarakat Singapadu atau Mangunkusuma termasuk keluarga kerajaan
+                    dari Ngayodya yang menjadi seorang patih yang merangkap menjadi jaksa. Dia memiliki istri bernama
+                    Supiah dari Nguren dan memiliki anak bernama Den Amat atau Surya Kusuma. Dia menjadi patih di Pati
+                    saat Adipati Mangun Oneng. Saat itu sedang terjadi peperangan antara Pati dan Banten. Pati mengalami
+                    kekalahan sehingga Singapadu mengembara dan berhenti di Desa Nguren. disini menyimpan anakronisme
+                    karena terbentur dengan kisah dalam babad maupun data sejarah yang nantinya akan ditemukan dan
+                    dibahas lebih lanjut.
+
+
+                    Cerita tersebut merupakan sejarah lokal yang diturunkan secara turun temurun (oral history) di
+                    Nguren dan hanya beberapa pihak yang mengetahuinya. Kemudian lanjutan cerita lokal tersebut
+                    mengambil cerita dari Babad Pati. Setelah menetap di Desa Nguren Singapadu dipanggil kembali oleh
+                    Adipati Puspa Handungjaya untuk menyelesaikan masalah Mayat Sondong Majruk yang ditemukan di
+                    perbatasan sebelah barat untuk mengadilinya dan menentukan siapa yang membunuhnya dan membuat
+                    strategi peperangan untuk perang Carangsoka dan Paranggaruda setelah gagalnya pernikahan antara
+                    Retna Dewi Nawang Wulan dan Raden Menak Jasari.
+                </p>
+                <a href="page-news9.html">
+                    <button class="more">MORE...</button>
+                </a>
+            </div>
+        </div>
+        <img src="foto/petilasan.jpg" alt="" data-aos="zoom-in">
+
+    </div>
+    <div class="parent-str" data-aos="fade-up">
+        <div class="title-str">
+            <P>STRUKTUR PEMERINTAHAN DESA</P>
+        </div>
+        <div class="struktur-pemerintahan">
+            <div class="row center" data-aos="fade-up">
+                <div class="child-str">
+                    <p>KEPALA DESA</p>
+                    <p>KASNAWI</p>
+                </div>
+            </div>
+
+            <div class="row center" data-aos="fade-up">
+                <div class="child-str">
+                    <p>SEKERTARIS DESA</p>
+                    <p>SUTRISNO S.H</p>
+                </div>
+            </div>
+
+            <div class="row" data-aos="fade-up">
+                <div class="child-str">
+                    <p>KASI PEMERINTAHAN</p>
+                    <p>AISHANDA S.E</p>
+                </div>
+                <div class="child-str">
+                    <p>KASI KESEJAHTERAAN</p>
+                    <p>DONI IRMANTO S.P</p>
+                </div>
+                <div class="child-str">
+                    <p>KASI PELAYANAN</p>
+                    <p>YUSUP MUHAMAD</p>
+                </div>
+            </div>
+
+            <div class="row" data-aos="fade-up">
+                <div class="child-str">
+                    <p>KAUR KEUANGAN</p>
+                    <p>SUBIANTO</p>
+                </div>
+                <div class="child-str">
+                    <p>KAUR PERENCANAAN</p>
+                    <p>MAS RUKIN S.P</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <h3 class="title-2" data-aos="fade-up">VISI MISI DESA NGURENREJO</h3>
+
+    <div class="parent-vimi" data-aos="zoom-in">
+
+        <div class="visi">
+            <div class="title-str-vm">
+                <p>VISI KEPALA DESA</p>
+            </div>
+            <p>
+                Gotong Royong Membangun Desa Ngurenrejo yang Jujur, Adil, Sejahtera,
+                Berbudaya dan Berakhlak Mulia.
+            </p>
+        </div>
+
+        <div class="misi">
+            <div class="title-str-vm">
+                <p>MISI KEPALA DESA</p>
+            </div>
+
+            <p>1. Mewujudkan pemerintahan desa yang jujur dan berwibawa dengan pengambilan keputusan yang cepat dan
+                tepat.</p>
+            <p>2. Mengedepankan kejujuran, musyawarah, mufakat dalam kehidupan sehari-hari baik dengan pemerintah maupun
+                dengan masyarakat desa.</p>
+            <p>3. Meningkatkan profesional perangkat desa dan mengoptimalkan pelayanan dengan melibatkan seluruh
+                perangkat desa.</p>
+            <p>4. Mewujudkan sarana prasarana desa yang memadai.</p>
+            <p>5. Meningkatkan perekonomian desa agar kesejahteraan warga desa maksimal.</p>
+            <p>6. Meningkatkan pelayanan kesehatan masyarakat desa.</p>
+            <p>7. Meningkatkan kehidupan desa secara dinamis dalam segi keagamaan dan kebudayaan.</p>
+        </div>
+    </div>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            easing: 'ease-out-cubic',
+        });
+    </script>
+
+</body>
+
+</html>

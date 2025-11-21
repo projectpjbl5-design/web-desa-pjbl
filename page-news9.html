@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    nav {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #27ae5f6d;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav b {
+        font-size: 15px;
+        color: #27AE60;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav ul li {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav ul li svg {
+        position: relative;
+        top: -2px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #27AE60;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    nav ul li:hover {
+        transform: translatey(-10px);
+        transition: ease-in-out 0.3s;
+        opacity: 50%;
+    }
+
+    .container {
+        padding: 50px 100px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .news-img {
+        width: 30%;
+        height: 200px;
+        display: flex;
+        object-fit: cover;
+    }
+
+    .text-content {
+        font-size: medium;
+        width: 90%;
+    }
+
+    .title {
+        border-left: 5px solid #27AE60;
+        padding-left: 1%;
+    }
+
+    .return-btn {
+        background-color: #27AE60;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .return-btn:hover {
+        background-color: #16703c;
+        transition: ease-in-out 0.3s;
+    }
+
+    .keterangan {
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        opacity: 20%;
+    }
+
+    p {
+        text-indent: 30px;
+        text-align: justify;
+        line-height: 1.3;
+    }
+</style>
+
+<body>
+    <nav>
+        <b>NGURENREJO</b>
+        <ul>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z" />
+                </svg>
+                <a href="home.html">HOME</a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm80-160h480v-80H240v80Zm0-160h160v-240H240v240Zm240 0h240v-80H480v80Zm0-160h240v-80H480v80Z" />
+                </svg>
+                <a href="news.html">NEWS</a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM380-420q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41Zm280 40q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29ZM480-160q85 0 155-40t113-106q-21-6-43-10t-45-4q-53 0-128 31T412-167q17 4 34 5.5t34 1.5Zm-127-26q35-72 79.5-107t67.5-47q-29-9-58.5-14.5T380-360q-45 0-89 11t-85 31q26 43 63.5 77.5T353-186Z" />
+                </svg>
+                <a href="profile.html">PROFILE</a>
+            </li>
+            <li id="navmaps">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#27AE60">
+                    <path
+                        d="M480-80q-106 0-173-33.5T240-200q0-24 14.5-44.5T295-280l63 59q-9 4-19.5 9T322-200q13 16 60 28t98 12q51 0 98.5-12t60.5-28q-7-8-18-13t-21-9l62-60q28 16 43 36.5t15 45.5q0 53-67 86.5T480-80Zm0-120Q339-304 269.5-402T200-594q0-71 25.5-124.5T291-808q40-36 90-54t99-18q49 0 99 18t90 54q40 36 65.5 89.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520Z" />
+                </svg>
+                <a href="home.html">ALAMAT</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <img src="foto/FB_IMG_1536540512480.jpg" alt=" Pertanian Bawang Merah" class="news-img">
+        <div class="card-content">
+            <div class="title">
+                <h1>KI AGENG SINGOPADU DESA NGURENREJO & DESA NGURENSITI</h1>
+            </div>
+            <p class="keterangan">09,Sep 2023 </p>
+            <div class="text-content">
+                <p>
+                    Di antara mitos dan sejarah, Singo Padu (Mangunkusumo) dikenal sebagai salah satu tokoh penting
+                    yang berhubungan dengan Desa Ngurenrejo dan Ngurensiti. Ia disebut sebagai keluarga bangsawan
+                    dari Ngayogyakarta yang pernah menjabat sebagai patih sekaligus jaksa. Singopadu memiliki istri
+                    bernama Supiah dari Nguren dan seorang anak bernama Den Amat atau Surya Kusuma. Pada masa Adipati
+                    Mangun Oneng, terjadi peperangan antara Pati dan Banten yang menyebabkan Singopadu mengembara
+                    hingga akhirnya menetap di Desa Nguren.
+                </p>
+
+                <p>
+                    Cerita mengenai Singopadu di Nguren merupakan sejarah lokal (oral history) yang diwariskan
+                    turun-temurun. Setelah menetap di Nguren, ia dipanggil kembali oleh Adipati Puspa Handungjaya
+                    untuk menyelesaikan kasus kematian Sondong Majruk serta merancang strategi perang Carangsoka
+                    dan Paranggaruda, yang dipicu oleh gagalnya pernikahan Retna Dewi Nawang Wulan dan
+                    Raden Menak Jasari.
+                </p>
+
+                <p>
+                    Suatu ketika, Penggede Lokajaya mengadakan hajatan tayub di sawah Dorogong dan mengundang
+                    para penggede desa lain, termasuk Singopadu. Dalam acara itu, Penggede Pajaran (Badog Basu)
+                    yang terkenal kuat minum tuak menari hingga pingsan. Ia berkata, “Siapa yang dapat menggendongku,
+                    tanah yang dilewati akan menjadi miliknya.” Semua mencoba, namun hanya Singopadu yang berhasil.
+                    Tanah yang dilaluinya—mulai dari Sinoman, Kedalon (Margomulyo), Trangkilan, hingga Megulung—
+                    menjadi wilayah Desa Nguren. Pada titik terakhir, Badog Basu sadar dan menyesal, sehingga wilayah
+                    itu tetap menjadi bagian Desa Nguren.
+                </p>
+
+                <p>
+                    Menurut cerita rakyat, Singopadu juga memiliki seorang koki yang kemudian diberi tanah dan menjadi
+                    wilayah bernama Ngurenkoki. Sementara wilayah selatan disebut Ngurenbumi. Ketika kedua wilayah
+                    berkembang, nama Ngurenkoki berubah menjadi Ngurenrejo, dan Ngurenbumi menjadi Ngurensiti.
+                </p>
+
+                <p>
+                    Dalam Babad Pati, Singopadu digambarkan sebagai patih dan jaksa di Kadipaten Carangsoka. Ia dikenal
+                    sebagai sosok yang bijak dalam menentukan keputusan, termasuk perkara kematian Sondong Majruk
+                    yang kemudian memicu peperangan antara Paranggaruda dan Carangsoka. Babad Pati juga menceritakan
+                    kisah Singapadu yang sedih karena hujan tak kunjung turun hingga sawah-sawah mengering. Ia lalu
+                    pergi mencari pertapa Kandhuruhan untuk memohon petunjuk dan memperbaiki keadaan.
+                </p>
+
+                <p>
+                    Terdapat versi lain yang menyebutkan bahwa Singopadu atau Mangunkusumo adalah Bupati Pati dalam
+                    masa tertentu, meskipun ada perbedaan antara versi babad dan cerita tutur masyarakat.
+                </p>
+
+            </div>
+            <a href="news.html">
+                <button class="return-btn">RETURN</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
